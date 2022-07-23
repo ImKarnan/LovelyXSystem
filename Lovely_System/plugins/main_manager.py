@@ -1,6 +1,6 @@
 import re
 
-from Lovely_System import Lovely_logs, ENFORCERS, INSPECTORS
+from Lovely_System import Lovely_logs, Lovely, ENFORCERS, INSPECTORS
 from Lovely_System.strings import (
     scan_request_string,
     reject_string,
