@@ -122,7 +122,7 @@ async def scan(event, flags):
     req_proof = req_user = False
     approve = bool(flags.f and executer.id in INSPECTORS)
     if replied.media:
-        await replied.forward_to(Skynet_logs)
+        await replied.forward_to(Lovely_logs)
     executor = f"[{executer.first_name}](tg://user?id={executer.id})"
     chat = (
         f"t.me/{event.chat.username}/{event.message.id}"
@@ -137,7 +137,7 @@ async def scan(event, flags):
         )
     if not approve:
         msg = await System.send_message(
-            Skynet_logs,
+            Lovely_logs,
             scan_request_string.format(
                 enforcer=executor,
                 spammer=sender,
@@ -148,7 +148,7 @@ async def scan(event, flags):
         )
         return
     msg = await System.send_message(
-        Skynet_logs,
+        Lovely_logs,
         forced_scan_string.format(
             ins=executor, spammer=sender, chat=chat, message=replied.text, reason=reason
         ),
@@ -175,7 +175,7 @@ async def revive(event):
     await a.edit("Revert request sent to Sylviorus. This might take 10minutes or so.")
 
 
-@System.on(system_cmd(pattern=r"Skynet logs"))
+@System.on(system_cmd(pattern=r"Lovely_logs"))
 async def logs(event):
     await System.send_file(event.chat_id, "log.txt")
 
